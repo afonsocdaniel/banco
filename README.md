@@ -57,3 +57,16 @@ Entrada
 
 Saída
 2
+
+## Exibindo o resultado
+* Os valores para o resultado estão nos arquivos input1.txt e input.txt
+
+```
+ruby exercicio2.rb
+```
+
+### Rodando os testes
+
+```
+rspec spec
+```
