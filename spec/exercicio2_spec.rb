@@ -30,5 +30,18 @@ describe Banco do
     it "deveria configurar as informacoes dos clientes" do
       expect(subject.clientes.size).to eql(16)
     end
+
+    it "deveria criar os clientes" do
+      expect(subject.clientes[0].instance_of?(Cliente)).to be_truthy
+      expect(subject.clientes[1].instance_of?(Cliente)).to be_truthy
+      expect(subject.clientes[2].instance_of?(Cliente)).to be_truthy
+    end
+
+    it "deveria configurar os valores de cada cliente" do
+      expect(subject.clientes[0].chegada).to eql(0)
+      expect(subject.clientes[0].duracao_atendimento).to eql(10)
+      expect(subject.clientes[1].chegada).to eql(0)
+      expect(subject.clientes[1].duracao_atendimento).to eql(10)
+    end
   end
 end
