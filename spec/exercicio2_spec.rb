@@ -12,7 +12,19 @@ describe Banco do
 
   describe "#initialize" do
     it "deveria configurar o numero de caixas" do
-      expect(subject.caixas).to eql(3)
+      expect(subject.caixas.size).to eql(3)
+    end
+
+    it "deveria criar os caixas" do
+      expect(subject.caixas[0].instance_of?(Caixa)).to be_truthy
+      expect(subject.caixas[1].instance_of?(Caixa)).to be_truthy
+      expect(subject.caixas[2].instance_of?(Caixa)).to be_truthy
+    end
+
+    it "deveria iniciar como zero o horario de disponibilidade de cada caixa" do
+      expect(subject.caixas[0].disponivel_em).to eql(0)
+      expect(subject.caixas[1].disponivel_em).to eql(0)
+      expect(subject.caixas[2].disponivel_em).to eql(0)
     end
 
     it "deveria configurar as informacoes dos clientes" do
